@@ -1,5 +1,33 @@
 import { html, css, LitElement } from 'lit';
 
+
+/**
+ * `dashboard-counter-label`
+ *
+ * Componente customizado baseado em **LitElement** usado para exibir:
+ * - Um **gráfico ou elemento visual** no topo (`<slot>`).
+ * - Um **contador numérico em destaque** (elemento com id `count`).
+ * - Um **título** (elemento `<h4>`).
+ * - Um **subtítulo** (elemento `subtitle`).
+ *
+ * ### Estilização
+ * O estilo do número (`.count-digit`) muda de acordo com a classe aplicada ao host:
+ * - `.green` → verde (#55bf3b)
+ * - `.red` → vermelho (#ff473a)
+ * - `.blue` → azul (#1877f3)
+ * - `.gray` → cinza translúcido
+ *
+ * ### Slots
+ * - `<slot>` → permite inserir conteúdo (ex.: gráficos) no topo do card.
+ *
+ * ### Exemplo de uso
+ * ```html
+ * <dashboard-counter-label class="green">
+ *   <my-chart-element></my-chart-element>
+ * </dashboard-counter-label>
+ * ```
+ * */
+
 class DashboardCounterLabel extends LitElement {
   static get styles() {
     return css`

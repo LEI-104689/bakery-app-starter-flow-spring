@@ -1,5 +1,14 @@
 package com.vaadin.starter.bakery.backend.data;
 
+
+/**
+ * Representa estatísticas de entregas, agregando informações numéricas
+ * usadas no painel de controle (dashboard).
+ *
+ * Inclui métricas relacionadas a pedidos entregues, vencidos ou novos.
+ */
+
+
 public class DeliveryStats {
 
 	private int deliveredToday;

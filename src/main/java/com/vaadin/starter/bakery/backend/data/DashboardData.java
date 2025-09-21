@@ -5,6 +5,16 @@ import java.util.List;
 
 import com.vaadin.starter.bakery.backend.data.entity.Product;
 
+
+/**
+ * Classe de transferência de dados (DTO) usada para agrupar as estatísticas
+ * exibidas no painel de controle (dashboard).
+ *
+ * Contém informações agregadas sobre entregas, vendas mensais e
+ * distribuição de produtos.
+ */
+
+
 public class DashboardData {
 
 	private DeliveryStats deliveryStats;

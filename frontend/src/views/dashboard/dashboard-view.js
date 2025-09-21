@@ -7,6 +7,38 @@ import '../storefront/order-card.js';
 import './dashboard-counter-label.js';
 import { sharedStyles } from '../../../styles/shared-styles.js';
 
+
+
+/**
+ * `dashboard-view`
+ *
+ * Componente de layout principal do painel (Dashboard) da aplicação.
+ *
+ * ### Estrutura
+ * - Usa `<vaadin-board>` para organizar o layout em linhas e colunas responsivas.
+ * - Contém múltiplos `<dashboard-counter-label>` que exibem métricas numéricas
+ *   acompanhadas de gráficos (`vaadin-chart`).
+ * - Inclui gráficos de entregas mensais/anuais e uma divisão de produtos (`donut chart`).
+ * - Inclui também uma tabela de pedidos (`vaadin-grid`).
+ *
+ * ### Estilização
+ * - Aplica `sharedStyles` e CSS customizado para sombra, espaçamento e tamanhos mínimos.
+ * - As linhas do board podem ser customizadas com `vaadin-board-row.custom-board-row`
+ *   para controlar breakpoints de largura.
+ *
+ * ### IDs disponíveis
+ * - `todayCount`, `notAvailableCount`, `newCount`, `tomorrowCount` → cards numéricos.
+ * - `deliveriesThisMonth`, `deliveriesThisYear`, `yearlySalesGraph`, `monthlyProductSplit` → gráficos.
+ * - `ordersGrid` → grid de pedidos.
+ *
+ * ### Performance
+ * - O método `firstUpdated()` foi sobrescrito para medir tempo de carregamento da página.
+ * - Usa Promises (`_chartsLoaded` e `_gridLoaded`) para sincronizar quando os gráficos e
+ *   grid de pedidos estiverem prontos.
+ *
+ */
+
+
 class DashboardView extends LitElement {
   static get styles() {
     return [
