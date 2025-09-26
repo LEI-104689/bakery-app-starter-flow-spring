@@ -1,34 +1,43 @@
 import { html, css, LitElement } from 'lit';
 
-
 /**
  * `dashboard-counter-label`
  *
- * Componente customizado baseado em **LitElement** usado para exibir:
- * - Um **gráfico ou elemento visual** no topo (`<slot>`).
- * - Um **contador numérico em destaque** (elemento com id `count`).
- * - Um **título** (elemento `<h4>`).
- * - Um **subtítulo** (elemento `subtitle`).
+ * Custom component based on **LitElement** used to display:
+ * - A **visual element or chart** at the top (`<slot>`).
+ * - A **highlighted numeric counter** (element with id `count`).
+ * - A **title** (element `<h4>`).
+ * - A **subtitle** (element `subtitle`).
  *
- * ### Estilização
- * O estilo do número (`.count-digit`) muda de acordo com a classe aplicada ao host:
- * - `.green` → verde (#55bf3b)
- * - `.red` → vermelho (#ff473a)
- * - `.blue` → azul (#1877f3)
- * - `.gray` → cinza translúcido
+ * ### Styling
+ * The style of the number (`.count-digit`) changes according to the class applied to the host:
+ * - `.green` → green (#55bf3b)
+ * - `.red` → red (#ff473a)
+ * - `.blue` → blue (#1877f3)
+ * - `.gray` → translucent gray
  *
  * ### Slots
- * - `<slot>` → permite inserir conteúdo (ex.: gráficos) no topo do card.
+ * - `<slot>` → allows inserting content (e.g., charts) at the top of the card.
  *
- * ### Exemplo de uso
+ * ### Example usage
  * ```html
  * <dashboard-counter-label class="green">
  *   <my-chart-element></my-chart-element>
  * </dashboard-counter-label>
  * ```
- * */
-
+ *
+ * @element dashboard-counter-label
+ * @csspart chart-wrapper - The wrapper for slot content (visual/chart)
+ * @csspart count-digit - The numeric counter styling
+ * @csspart subtitle - The subtitle section
+ * @slot - Place for a chart or visual element at the top
+ * @summary A LitElement-based counter label card for dashboards.
+ */
 class DashboardCounterLabel extends LitElement {
+  /**
+   * Returns the styles applied to this component.
+   * @returns {CSSResult}
+   */
   static get styles() {
     return css`
       :host {
@@ -89,6 +98,10 @@ class DashboardCounterLabel extends LitElement {
     `;
   }
 
+  /**
+   * Renders the component's HTML template.
+   * @returns {import('lit').TemplateResult}
+   */
   render() {
     return html`
       <div class="chart-wrapper">
@@ -106,6 +119,11 @@ class DashboardCounterLabel extends LitElement {
     `;
   }
 
+  /**
+   * The tag name for this custom element.
+   * @type {string}
+   * @readonly
+   */
   static get is() {
     return 'dashboard-counter-label';
   }
