@@ -1,60 +1,95 @@
 package com.vaadin.starter.bakery.backend.data;
 
-
 /**
  * Representa estatísticas de entregas, agregando informações numéricas
  * usadas no painel de controle (dashboard).
  *
  * Inclui métricas relacionadas a pedidos entregues, vencidos ou novos.
  */
-
-
 public class DeliveryStats {
 
-	private int deliveredToday;
-	private int dueToday;
-	private int dueTomorrow;
-	private int notAvailableToday;
-	private int newOrders;
+    // Número de pedidos entregues no dia atual
+    private int deliveredToday;
 
-	public int getDeliveredToday() {
-		return deliveredToday;
-	}
+    // Número de pedidos com vencimento para o dia atual
+    private int dueToday;
 
-	public void setDeliveredToday(int deliveredToday) {
-		this.deliveredToday = deliveredToday;
-	}
+    // Número de pedidos com vencimento para o dia seguinte
+    private int dueTomorrow;
 
-	public int getDueToday() {
-		return dueToday;
-	}
+    // Número de pedidos que não estão disponíveis para entrega hoje
+    private int notAvailableToday;
 
-	public void setDueToday(int dueToday) {
-		this.dueToday = dueToday;
-	}
+    // Número de novos pedidos recebidos
+    private int newOrders;
 
-	public int getDueTomorrow() {
-		return dueTomorrow;
-	}
+    /**
+     * Retorna o número de pedidos entregues hoje.
+     */
+    public int getDeliveredToday() {
+        return deliveredToday;
+    }
 
-	public void setDueTomorrow(int dueTomorrow) {
-		this.dueTomorrow = dueTomorrow;
-	}
+    /**
+     * Define o número de pedidos entregues hoje.
+     */
+    public void setDeliveredToday(int deliveredToday) {
+        this.deliveredToday = deliveredToday;
+    }
 
-	public int getNotAvailableToday() {
-		return notAvailableToday;
-	}
+    /**
+     * Retorna o número de pedidos com vencimento hoje.
+     */
+    public int getDueToday() {
+        return dueToday;
+    }
 
-	public void setNotAvailableToday(int notAvailableToday) {
-		this.notAvailableToday = notAvailableToday;
-	}
+    /**
+     * Define o número de pedidos com vencimento hoje.
+     */
+    public void setDueToday(int dueToday) {
+        this.dueToday = dueToday;
+    }
 
-	public int getNewOrders() {
-		return newOrders;
-	}
+    /**
+     * Retorna o número de pedidos com vencimento amanhã.
+     */
+    public int getDueTomorrow() {
+        return dueTomorrow;
+    }
 
-	public void setNewOrders(int newOrders) {
-		this.newOrders = newOrders;
-	}
+    /**
+     * Define o número de pedidos com vencimento amanhã.
+     */
+    public void setDueTomorrow(int dueTomorrow) {
+        this.dueTomorrow = dueTomorrow;
+    }
 
+    /**
+     * Retorna o número de pedidos indisponíveis para entrega hoje.
+     */
+    public int getNotAvailableToday() {
+        return notAvailableToday;
+    }
+
+    /**
+     * Define o número de pedidos indisponíveis para entrega hoje.
+     */
+    public void setNotAvailableToday(int notAvailableToday) {
+        this.notAvailableToday = notAvailableToday;
+    }
+
+    /**
+     * Retorna o número de novos pedidos recebidos.
+     */
+    public int getNewOrders() {
+        return newOrders;
+    }
+
+    /**
+     * Define o número de novos pedidos recebidos.
+     */
+    public void setNewOrders(int newOrders) {
+        this.newOrders = newOrders;
+    }
 }
